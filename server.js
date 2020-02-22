@@ -1,7 +1,7 @@
 var express = require("express");
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,6 +13,7 @@ app.get("/public/notes", function(req, res) {
 app.get("/public/*", function(req, res) {
     return res.json();
 });
+
 
 
 //Listener
